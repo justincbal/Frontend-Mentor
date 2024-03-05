@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
 @font-face {
   font-family: poppins;
   src: url("../fonts/Poppins-Regular.ttf");
@@ -11,6 +15,12 @@
 @font-face {
   font-family: poppins800;
   src: url("../fonts/Poppins-Italic.ttf");
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
 }
 
 html,
@@ -35,8 +45,10 @@ body {
 
 .main-section {
   background-color: hsl(0, 0%, 100%);
-  padding: 40px;
+  padding: 40px 100px;
   width: 1000px;
+  border-radius: 25px 25px 25% 25px;
+  position: relative;
 }
 
 .input-section {
@@ -44,16 +56,21 @@ body {
   padding: 40px 0;
   border-bottom: 1px hsl(0, 0%, 86%) solid;
   gap: 40px;
+  margin-bottom: 50px;
 }
 
 input {
   font-size: 32px;
-  width: 200px;
+  width: 170px;
   border-radius: 5px;
   border: none;
   outline: 1px solid hsl(0, 0%, 86%);
-  padding: 20px;
+  padding: 15px 20px;
   font-family: "poppinsBold";
+}
+
+::placeholder {
+  color: hsl(0, 0%, 86%)
 }
 
 .input-heading {
@@ -61,14 +78,29 @@ input {
   color: hsl(0, 1%, 44%);
   font-family: "poppinsBold";
   letter-spacing: 5px;
+  margin-bottom: 15px;
 }
 
 .display-field {
-  font-family: "poppins800";
-  font-weight: 800;
-  font-size: 64px;
+  font-size: 100px;
 }
 
 .purp {
   color: hsl(259, 100%, 65%);
+}
+
+button {
+  background-color: hsl(259, 100%, 65%);
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  width: 125px;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 50%;
+
+  &:hover {
+    cursor: pointer;
+    background-color: black;
+  }
 }
