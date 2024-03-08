@@ -84,10 +84,16 @@ function checkErrors(d, m, y) {
   const dayError = document.querySelector(".dayError");
   const monthError = document.querySelector(".monthError");
   const yearError = document.querySelector(".yearError");
+  const headDay = document.querySelector(".headDay");
+  const headMonth = document.querySelector(".headMonth");
+  const headYear = document.querySelector(".headYear");
+  const yearsField = document.querySelector(".years");
+  const monthsField = document.querySelector(".months");
+  const daysField = document.querySelector(".days");
+
   let errors = false;
   // Check if empty
   if (d.value == "") {
-    const headDay = document.querySelector(".headDay");
     dayError.textContent = "This field is required";
     headDay.classList.add("red");
     dayError.classList.add("red");
@@ -96,7 +102,6 @@ function checkErrors(d, m, y) {
   }
 
   if (m.value == "") {
-    const headMonth = document.querySelector(".headMonth");
     monthError.textContent = "This field is required";
     headMonth.classList.add("red");
     monthError.classList.add("red");
@@ -105,12 +110,46 @@ function checkErrors(d, m, y) {
   }
 
   if (y.value == "") {
-    const headYear = document.querySelector(".headYear");
     yearError.textContent = "This field is required";
     headYear.classList.add("red");
     yearError.classList.add("red");
     errors = true;
     y.style.outlineColor = "red";
+  }
+
+  // Check valid date
+  if (validateDay(d.value, m.value, y.value) == false) {
+    if (d.value > 31 || d.value < 1) {
+      dayError.textContent = "Must be a valid day";
+    } else {
+      dayError.textContent = "Must be a valid date";
+    }
+    headDay.classList.add("red");
+    dayError.classList.add("red");
+    errors = true;
+    d.style.outlineColor = "red";
+  }
+
+  if (!validateMonth(m.value)) {
+    monthError.textContent = "Must be a valid month";
+    headMonth.classList.add("red");
+    monthError.classList.add("red");
+    errors = true;
+    m.style.outlineColor = "red";
+  }
+
+  if (!validateYear(y.value)) {
+    yearError.textContent = "Must be in the past";
+    headYear.classList.add("red");
+    yearError.classList.add("red");
+    errors = true;
+    y.style.outlineColor = "red";
+  }
+
+  if (errors) {
+    yearsField.textContent = `-- `;
+    monthsField.textContent = `-- `;
+    daysField.textContent = `-- `;
   }
 
   return errors;
