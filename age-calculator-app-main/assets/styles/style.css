@@ -26,7 +26,7 @@
 html,
 body {
   box-sizing: border-box;
-  background-color: hsl(0, 0%, 86%);
+  background-color: hsl(30deg 0% 94%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +49,7 @@ body {
   width: 1000px;
   border-radius: 25px 25px 25% 25px;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .input-section {
@@ -64,9 +65,15 @@ input {
   width: 170px;
   border-radius: 5px;
   border: none;
-  outline: 1px solid hsl(0, 0%, 86%);
+  outline: 1px solid #dbdbdb;
   padding: 15px 20px;
   font-family: "poppinsBold";
+  margin: 15px 0px;
+  
+}
+
+.errorMessage {
+  font-size: .8rem;
 }
 
 ::placeholder {
@@ -78,7 +85,6 @@ input {
   color: hsl(0, 1%, 44%);
   font-family: "poppinsBold";
   letter-spacing: 5px;
-  margin-bottom: 15px;
 }
 
 .display-field {
@@ -103,4 +109,12 @@ button {
     cursor: pointer;
     background-color: black;
   }
+}
+
+.red {
+  color: hsl(0, 100%, 67%);
+}
+
+.grey {
+  color: hsl(0, 0%, 86%);
 }
