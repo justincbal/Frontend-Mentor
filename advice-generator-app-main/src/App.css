@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
+body,
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+:root {
+  /* Primary */
+  --cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+  /* Neutral */
+  --gray-blue: hsl(217, 19%, 38%);
+  --dark-gray-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--dark-blue);
+}
+
+.main {
+  position: relative;
+  background-color: var(--dark-gray-blue);
+  padding: 50px;
+  border-radius: 25px;
+  width: 444px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.adviceHeading {
+  color: var(--neon-green);
+  font-size: 1rem;
+  letter-spacing: 5px;
+}
+
+.adviceText {
+  color: var(--cyan);
+  font-size: 28px;
+  /* width: 444px; */
+  text-align: center;
+}
+
+.divider {
+  margin-bottom: 35px;
+}
+
+button {
+  color: var(--dark-blue);
+  background-color: var(--neon-green);
+  aspect-ratio: 1/1;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -8%;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 40px 5px var(--neon-green);
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    width: 295px;
+  }
+}
