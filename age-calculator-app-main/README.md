@@ -30,11 +30,12 @@ Users should be able to:
 
 ### Screenshot
 
-![application screenshot](/public/screenshot.png)
-![application error states](/public/screenshot-error.png)
+![application screenshot](./public/screenshot.png)
+![application error states](./public/screenshot-error.png)
 
 ### Links
 
+- Live site URL: [Vercel link](https://frontend-mentor-tau-ten.vercel.app/)
 - Github repository URL: [Repository](https://github.com/justincbal/Frontend-Mentor/tree/main/age-calculator-app-main)
 - Frontend Mentor Challenge URL: [Challenge](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q)
 
