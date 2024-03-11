@@ -5,6 +5,8 @@
 .navBar {
   display: flex;
   justify-content: space-between;
+  width: 80vw;
+  margin-bottom: 50px;
 }
 
 .navItem {

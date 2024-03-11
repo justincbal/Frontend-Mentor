@@ -34,5 +34,7 @@ body {
   background-color: var(--off-white);
   display: flex;
   flex-direction: column;
-  padding: 5%;
+  align-items: center;
+  padding-top: 5%;
+
 }
