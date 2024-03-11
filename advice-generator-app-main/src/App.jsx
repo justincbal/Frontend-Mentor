@@ -20,6 +20,20 @@ function App() {
     const handleResize = () => {
       setMobile(mediaQuery.matches);
     };
+    fetch("https://api.adviceslip.com/advice", { mode: "cors" })
+      .then((res) => {
+        if (res.status >= 400) {
+          throw new Error("Server Error");
+        }
+        return res.json();
+      })
+      .then((res) => {
+        setAdvice(res.slip.advice);
+        setAdviceNum(res.slip.id);
+        console.log(res);
+      })
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false));
     mediaQuery.addListener(handleResize);
     return () => {
       mediaQuery.removeListener(handleResize);
@@ -47,9 +61,7 @@ function App() {
     <>
       <div className="main">
         <h1 className="adviceHeading">ADVICE #{adivceNum}</h1>
-        <p className="adviceText">
-          {loading ? "Click for advice" : `"${advice}"`}
-        </p>
+        <p className="adviceText">"{advice}"</p>
 
         {!isMobile ? (
           <svg
