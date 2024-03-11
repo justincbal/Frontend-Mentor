@@ -1,0 +1,25 @@
+.logo {
+  margin-right: auto;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navItem {
+  list-style: none;
+  width: 120px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(236, 13%, 42%);
+  font-weight: 400;
+  &:hover {
+    color: hsl(5, 85%, 63%);
+  }
+}
