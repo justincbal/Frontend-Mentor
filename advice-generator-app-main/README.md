@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Github Repo URL: [Repository](https://github.com/justincbal/Frontend-Mentor/tree/main/advice-generator-app-main)
-- Live Site URL: [Live preview](https://your-live-site-url.com)
+- Live Site URL: [Live preview](https://advice-generator-frontendmentor-blond.vercel.app/)
 - Challenge URL: [Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db)
 
 ## My process
