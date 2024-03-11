@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [advice, setAdvice] = useState("");
+  const [adivceNum, setAdviceNum] = useState(0);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [isMobile, setMobile] = useState(
@@ -33,7 +34,11 @@ function App() {
         }
         return res.json();
       })
-      .then((res) => setAdvice(res.slip.advice))
+      .then((res) => {
+        setAdvice(res.slip.advice);
+        setAdviceNum(res.slip.id);
+        console.log(res);
+      })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   };
@@ -41,9 +46,9 @@ function App() {
   return (
     <>
       <div className="main">
-        <h1 className="adviceHeading">ADVICE #117</h1>
+        <h1 className="adviceHeading">ADVICE #{adivceNum}</h1>
         <p className="adviceText">
-          "{loading ? "Click to get advice" : advice}"
+          {loading ? "Click for advice" : `"${advice}"`}
         </p>
 
         {!isMobile ? (
@@ -62,7 +67,12 @@ function App() {
             </g>
           </svg>
         ) : (
-          <svg className="divider" width="295" height="16" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            className="divider"
+            width="295"
+            height="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <g fill="none" fill-rule="evenodd">
               <path fill="#4F5D74" d="M0 8h122v1H0zM173 8h122v1H173z" />
               <g transform="translate(138)" fill="#CEE3E9">
@@ -72,7 +82,6 @@ function App() {
             </g>
           </svg>
         )}
-        
 
         <button onClick={() => getAdvice()}>
           <svg
