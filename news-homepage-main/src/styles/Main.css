@@ -153,11 +153,11 @@
   font-size: 17px;
 }
 
-/* @media (max-width: 800px) {
+@media (max-width: 800px) {
   .grid-section {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    /* grid-template-rows: repeat(4, 1fr); */
     grid-template-areas:
       "hero"
       "md"
@@ -168,6 +168,8 @@
 
   .hero {
     object-fit: contain;
+    min-height: 100%;
+    min-width: 100%;
   }
 
   .middle {
@@ -183,21 +185,19 @@
   }
 
   .mid-text {
-    font-size: 17px;
     max-width: 50ch;
   }
 
   .bottom {
-    flex-direction: column;
-    gap: 30px;
-    padding-top: 50px;
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .bottom-article {
-    height: 130px;
+    gap: 50px;
   }
 
   .article-image {
-    object-fit: cover;
   }
-} */
+}
