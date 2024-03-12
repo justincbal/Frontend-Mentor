@@ -1,6 +1,21 @@
+import { useEffect, useState } from "react";
 import "../styles/Navbar.css";
 
 const NavBar = () => {
+  const [isSmall, setSmall] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 800px)');
+    setSmall(mediaQuery.matches);
+
+    const handleChange = (e) => setSmall(e.matches);
+    mediaQuery.addListener(handleChange);
+
+    return () => {
+      mediaQuery.removeListener(handleChange);
+    }
+  }, [])
+  
   return (
     <>
       <nav className="navBar">
@@ -10,7 +25,8 @@ const NavBar = () => {
             fill="#00001A"
           />
         </svg>
-        <li className="navItem">
+       
+        {isSmall ? (<svg width="40" height="17" xmlns="http://www.w3.org/2000/svg"><g fill="#00001A" fill-rule="evenodd"><path d="M0 0h40v3H0zM0 7h40v3H0zM0 14h40v3H0z"/><path d="M0 0h40v3H0z"/></g></svg>) : ( <><li className="navItem">
           <a href="#">Home</a>
         </li>
         <li className="navItem">
@@ -24,7 +40,7 @@ const NavBar = () => {
         </li>
         <li className="navItem">
           <a href="#">Categories</a>
-        </li>
+        </li></>)}
       </nav>
     </>
   );

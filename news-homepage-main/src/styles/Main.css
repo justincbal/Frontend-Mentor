@@ -6,15 +6,16 @@
     "md md side"
     "bt bt bt";
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   max-width: 1400px;
   /* grid-template-rows: repeat(3, 0.5fr) 0.2fr; */
   gap: 50px;
 }
-
 .hero {
   grid-area: hero;
-  object-fit: cover;
-  max-width: 100%;
+  grid-column: 1/3;
+  /* object-fit: cover; */
+  width: 100%;
 }
 
 .side-panel {
@@ -44,6 +45,10 @@
 
 .side-article-heading {
   color: hsl(36, 100%, 99%);
+  &:hover {
+    cursor: pointer;
+    color: hsl(35, 77%, 62%);
+  }
 }
 
 .side-article-text {
@@ -74,7 +79,8 @@
 }
 
 .mid-text {
-  font-size: 15px;
+  font-size: 17px;
+  max-width: 40ch;
   line-height: 1.5;
   color: hsl(236, 13%, 42%);
 }
@@ -96,30 +102,35 @@
 }
 
 .bottom {
+  /* border: 1px solid black; */
   grid-area: bt;
-  display: flex;
+  display: grid;
   gap: 50px;
-  height: 125px;
+  grid-template-columns: repeat(3, 1fr);
+  height: min-content;
+  /* height: ; */
+  /* max-width: 100%; */
+  /* gap: 50px; */
 }
 
 .bottom-article {
-  flex: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  max-width: 100%;
   /* border: 1px solid red; */
   gap: 25px;
 }
 
 .article-image {
-  /* flex-grow: 1; */
-  max-width: 100%;
-
+  object-fit: cover;
+  width: 110%;
+  height: 100%;
 }
 
 .article-texts {
-  flex-grow: 3;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 15px;
 }
 
 .article-number {
@@ -129,8 +140,64 @@
 
 .article-head {
   color: hsl(240, 100%, 5%);
+  font-size: 20px;
+
+  &:hover {
+    color: hsl(5, 85%, 63%);
+    cursor: pointer;
+  }
 }
 
 .art-text {
   color: hsl(236, 13%, 42%);
+  font-size: 17px;
 }
+
+/* @media (max-width: 800px) {
+  .grid-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "hero"
+      "md"
+      "side"
+      "bt";
+    gap: 5px;
+  }
+
+  .hero {
+    object-fit: contain;
+  }
+
+  .middle {
+    flex-direction: column;
+  }
+
+  .mid {
+    justify-content: space-evenly;
+  }
+
+  .mid-side {
+    max-width: 10ch;
+  }
+
+  .mid-text {
+    font-size: 17px;
+    max-width: 50ch;
+  }
+
+  .bottom {
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 50px;
+  }
+
+  .bottom-article {
+    height: 130px;
+  }
+
+  .article-image {
+    object-fit: cover;
+  }
+} */

@@ -4,12 +4,25 @@ const Main = () => {
   return (
     <>
       <div className="grid-section">
-        <img
+        {/* <img
           className="hero"
           src="../../public/assets/images/image-web-3-desktop.jpg"
           alt=""
-          srcset=""
-        />
+          srcset="../../public/assets/images/image-web-3-mobile.jpg 800w"
+        /> */}
+        <picture className="hero">
+          <source
+            media="(max-width: 800px)"
+            srcset="../../public/assets/images/image-web-3-mobile.jpg"
+            // className="hero"
+          />
+          <img
+            src="../../public/assets/images/image-web-3-desktop.jpg"
+            alt=""
+            srcset=""
+            className="hero"
+          />
+        </picture>
         <div className="side-panel">
           <h2 className="side-heading">New</h2>
           <div className="side-article">
@@ -57,7 +70,9 @@ const Main = () => {
             <div className="article-texts">
               <h3 className="article-number">01</h3>
               <h4 className="article-head">Reviving Retro PCs</h4>
-              <p className="art-text">What happens when old PCs are given modern upgrades?</p>
+              <p className="art-text">
+                What happens when old PCs are given modern upgrades?
+              </p>
             </div>
           </div>
           <div className="bottom-article">
@@ -69,7 +84,9 @@ const Main = () => {
             <div className="article-texts">
               <h3 className="article-number">02</h3>
               <h4 className="article-head">Top 10 Laptops of 2022</h4>
-              <p className="art-text">Our best picks for various needs and budgets</p>
+              <p className="art-text">
+                Our best picks for various needs and budgets
+              </p>
             </div>
           </div>
           <div className="bottom-article">
@@ -81,7 +98,9 @@ const Main = () => {
             <div className="article-texts">
               <h3 className="article-number">03</h3>
               <h4 className="article-head">The Growth of Gaming</h4>
-              <p className="art-text">How the pandemic has sparked fresh opportunities</p>
+              <p className="art-text">
+                How the pandemic has sparked fresh opportunities
+              </p>
             </div>
           </div>
         </div>
