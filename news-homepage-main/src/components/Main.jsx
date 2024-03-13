@@ -13,11 +13,11 @@ const Main = () => {
         <picture className="hero">
           <source
             media="(max-width: 800px)"
-            srcset="../../public/assets/images/image-web-3-mobile.jpg"
+            srcset="/assets/images/image-web-3-mobile.jpg"
             // className="hero"
           />
           <img
-            src="../../public/assets/images/image-web-3-desktop.jpg"
+            src="/assets/images/image-web-3-desktop.jpg"
             alt=""
             srcset=""
             className="hero"
