@@ -1,0 +1,63 @@
+@import "./variables.css";
+
+.themeSwitch {
+  display: flex;
+  flex-grow: .1;
+  /* border: 1px solid red; */
+  padding: 10px;
+  gap: 15px;
+}
+
+.themeSection {
+    width: 70px;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    margin-right: auto;
+    color: white;
+}
+
+.themeHead {
+    font-size: 12px;
+    color: white;
+    align-items: end;
+    padding: 5px;
+}
+
+.themes {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+}
+
+.themes > div {
+    flex: 1;
+}
+
+.themesNum {
+  display: flex;
+  color: white;
+  font-size: 12px;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.outer {
+  background-color: var(--theme1-button-background);
+  position: relative;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.switch {
+  background-color: var(--theme1-key2-background);
+  position: absolute;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  width: 10px;
+}

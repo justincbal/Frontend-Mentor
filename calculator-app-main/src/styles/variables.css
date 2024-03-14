@@ -1,11 +1,11 @@
 :root {
     /* Theme 1*/
-    --theme1-main-background: hsl(222, 21%, 49%);
-    --theme1-toggle-background: hsl(223, 31%, 20%);
-    --theme1-screen-background: hsl(224, 28%, 35%);
+    --theme1-main-background: #3a4665;
+    --theme1-button-background: #242d44;
+    --theme1-screen-background: #181f33;
 
-    --theme1-key-background: hsl(225,21%,49%);
-    --theme1-key-shadow: hsl(224, 28%, 35%);
+    --theme1-key-background: #eae3db;
+    --theme1-key-shadow: #b3a297;
 
     --theme1-key2-background: hsl(6, 63%, 50%);
     --theme1-key2-shadow: hsl(6, 70%, 34%);

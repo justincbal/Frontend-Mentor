@@ -1,0 +1,16 @@
+@import './variables.css';
+
+.screen {
+    background-color: var(--theme1-screen-background);
+    display: flex;
+    justify-content: end;
+    padding: 30px;
+    border-radius: 15px;
+    flex-grow: 1;
+}
+
+.output {
+    color: white;
+    font-size: 50px;
+
+}
