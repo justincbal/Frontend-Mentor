@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-@import './constants.css';
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import "./constants.css";
 
-body, html {
+body,
+html {
   box-sizing: border-box;
   height: 100vh;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -29,13 +32,14 @@ body, html {
   letter-spacing: 10px;
   color: var(--text-color);
   margin: 50px;
-  font-size: rem;
+  /* font-size: rem; */
 }
 
 /* MAIN SECTION */
 .main {
   background-color: white;
   width: 100vw;
+  /* max-width: fit-content; */
   border-radius: 15px;
   height: 100vh;
   padding: 50px;
@@ -53,7 +57,8 @@ body, html {
   .main {
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
-    width: 75vw;
+    width: 70vw;
+    max-width: 1200px;
     height: fit-content;
   }
 }

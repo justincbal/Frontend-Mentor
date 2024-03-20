@@ -104,6 +104,19 @@ input:focus {
   outline: 0;
 }
 
+.errorHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  border: 3px solid orange;
+}
+
+.errorMessage {
+  color: orange;
+}
+
 @media (min-width: 800px) {
   .gridButtons {
     grid-template-columns: repeat(3, minmax(0, 1fr));

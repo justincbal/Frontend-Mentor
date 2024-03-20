@@ -1,14 +1,25 @@
+import { useState } from "react";
 import "../styles/Form.css";
 
 const Form = (props) => {
+  const [error, SetError] = useState(false);
+
   const handleBill = (e) => {
     const value = e.target.value;
     props.setAmount(value);
   };
   const handlePeople = (e) => {
     let value;
-    e.target.value == 0 ? (value = 1) : (value = e.target.value);
+    // e.target.value == 0 ? (value = 1) : (value = e.target.value);
     // value = e.target.value;
+
+    if (e.target.value == 0) {
+      SetError(true);
+      value = 1;
+    } else {
+      SetError(false);
+      value = e.target.value;
+    }
 
     props.setPeople(value);
   };
@@ -16,8 +27,7 @@ const Form = (props) => {
   const handleClick = (e) => {
     const value = e.target.textContent.slice(0, -1);
     const custom = document.querySelector(".customInput");
-    if(custom.value)
-    custom.value = '';
+    if (custom.value) custom.value = "";
     console.log(1 + value / 100);
     props.setTip(1 + value / 100);
   };
@@ -102,7 +112,11 @@ const Form = (props) => {
 
         {/* PEOPLE */}
         <div className="inputSection">
-          <h2 className="inputHeading">Number of People</h2>
+          <div className="errorHeading">
+            <h2 className="inputHeading">Number of People</h2>
+            <h4 className="errorMessage">{!error ? "" : "Can't be zero"}</h4>
+          </div>
+
           <div className="iconInput">
             <div className="icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="16">
@@ -116,7 +130,7 @@ const Form = (props) => {
               type="text"
               name=""
               id=""
-              className="input"
+              className={`input ${!error ? "" : "error"}`}
               placeholder="1"
               onChange={(e) => handlePeople(e)}
             />
