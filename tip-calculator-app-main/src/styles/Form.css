@@ -39,14 +39,15 @@
 
 .input {
   background-color: var(--lighter-gray-cyan);
+  /* flex-shrink: 1; */
   height: 100%;
   border: 0;
-  flex: 1;
+  /* flex: 1; */
+  width: 100%;
   text-align: end;
   padding: 10px;
   font-size: 24px;
   border-radius: 0 5px 5px 0;
-  font-size: 24px;
 }
 
 ::placeholder {
@@ -72,7 +73,8 @@
   font-size: 24px;
   &:hover {
     cursor: pointer;
-    background-color: var(--strong-cyan);
+    /* background-color: var(--strong-cyan); */
+    background-color: var(--light-gray-cyan);
     color: var(--dark-cyan);
   }
 }
@@ -83,6 +85,10 @@
   border: 0;
   background-color: var(--lighter-gray-cyan);
   font-size: 24px;
+  &:hover {
+    cursor: pointer;
+    border: 3px solid var(--strong-cyan);
+  }
 }
 
 input {
@@ -92,4 +98,10 @@ input {
 input:focus {
   border: 3px solid var(--strong-cyan);
   outline: 0;
+}
+
+@media (min-width: 800px){
+  .gridButtons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }

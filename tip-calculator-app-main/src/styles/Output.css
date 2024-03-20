@@ -3,4 +3,54 @@
 /* OUTPUT CONTAINER */
 .outputSection {
     background-color: var(--dark-cyan);
+    border-radius: 15px;
+    padding: 25px;
+    padding-top: 50px;
+    display: grid;
+    gap: 1.5rem;
+}
+
+/* Output */
+.output {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+.outputHeader {
+    color: var(--lighter-gray-cyan);
+    font-size: 20px;
+}
+
+.outputSubhead {
+    color: var(--grayish-cyan);
+    font-size: 15px;
+}
+
+.price {
+    color: var(--strong-cyan);
+    font-size: 36px;
+    align-self: flex-end;
+}
+
+.reset {
+    font-size: 24px;
+    background-color: var(--strong-cyan);
+    border: 0;
+    color: var(--dark-cyan);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 50px;
+    height: 55px;
+    &:hover {
+        cursor: pointer;
+        background-color: var(--light-gray-cyan);
+    }
+}
+
+@media (min-width: 800px) {
+    .price {
+        align-self: auto;
+    }
 }
