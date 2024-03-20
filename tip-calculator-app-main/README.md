@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository](https://github.com/justincbal/Frontend-Mentor/tree/main/tip-calculator-app-main)
+- Live Site URL: [Live preview](https://tip-calculator-frontend-mentor-eight.vercel.app/)
 
 ### Built with
 
