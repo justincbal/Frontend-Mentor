@@ -1,0 +1,6 @@
+@import './constants.css';
+
+/* OUTPUT CONTAINER */
+.outputSection {
+    background-color: var(--dark-cyan);
+}
