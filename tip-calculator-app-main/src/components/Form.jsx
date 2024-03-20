@@ -1,6 +1,31 @@
 import "../styles/Form.css";
 
-const Form = () => {
+const Form = (props) => {
+  const handleBill = (e) => {
+    const value = e.target.value;
+    props.setAmount(value);
+  };
+  const handlePeople = (e) => {
+    let value;
+    e.target.value == 0 ? (value = 1) : (value = e.target.value);
+    // value = e.target.value;
+
+    props.setPeople(value);
+  };
+
+  const handleClick = (e) => {
+    const value = e.target.textContent.slice(0, -1);
+    const custom = document.querySelector(".customInput");
+    if(custom.value)
+    custom.value = '';
+    console.log(1 + value / 100);
+    props.setTip(1 + value / 100);
+  };
+
+  const handleCustom = (e) => {
+    const value = e.target.value;
+    props.setTip(1 + value / 100);
+  };
   return (
     <>
       <div className="formSection">
@@ -20,21 +45,58 @@ const Form = () => {
               name=""
               id=""
               className="input"
-              placeholder="142.55"
+              placeholder="0"
+              onChange={(e) => handleBill(e)}
             />
-            
           </div>
         </div>
 
         <div className="inputSection">
           <h2 className="inputHeading">Select Tip %</h2>
           <div className="gridButtons">
-            <button className="btn">5%</button>
-            <button className="btn">10%</button>
-            <button className="btn">15%</button>
-            <button className="btn">25%</button>
-            <button className="btn">50%</button>
-            <input type="text" name="" id="" placeholder="Custom" className="customInput"/>
+            <button
+              className="btn"
+              type="button"
+              onClick={(e) => handleClick(e)}
+            >
+              5%
+            </button>
+            <button
+              className="btn"
+              type="button"
+              onClick={(e) => handleClick(e)}
+            >
+              10%
+            </button>
+            <button
+              className="btn"
+              type="button"
+              onClick={(e) => handleClick(e)}
+            >
+              15%
+            </button>
+            <button
+              className="btn"
+              type="button"
+              onClick={(e) => handleClick(e)}
+            >
+              25%
+            </button>
+            <button
+              className="btn"
+              type="button"
+              onClick={(e) => handleClick(e)}
+            >
+              50%
+            </button>
+            <input
+              type="text"
+              name=""
+              id=""
+              placeholder="Custom"
+              className="customInput"
+              onChange={(e) => handleCustom(e)}
+            />
           </div>
         </div>
 
@@ -55,7 +117,8 @@ const Form = () => {
               name=""
               id=""
               className="input"
-              placeholder="2"
+              placeholder="1"
+              onChange={(e) => handlePeople(e)}
             />
           </div>
         </div>
