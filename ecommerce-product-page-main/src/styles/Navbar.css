@@ -1,0 +1,28 @@
+@import './constants.css';
+
+.navBar {
+    display: flex;
+    gap: 32px;
+    height: 112px;
+    align-items: center;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+
+.navHeading {
+    border-bottom: 5px solid white;
+    margin-right: 55px;
+}
+
+.navLinks {
+    font-size: 16px;
+    font-weight: 400;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid white;
+
+    &:hover {
+        cursor: pointer;
+        border-bottom: 5px solid var(--orange);
+    }
+}
